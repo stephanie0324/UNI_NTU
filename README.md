@@ -1,20 +1,17 @@
 <h1 align="center"> UNI_NTU </h1>
 
 <p align="center">
-    <a href="https://github.com/stephanie0324/Finetune_LLM/stargazers">
-        <img alt="Build" src="https://img.shields.io/github/stars/stephanie0324/REVERSI.svg?color=yellow&style=flat&label=Stars&logoColor=white">
+    <a href="https://github.com/stephanie0324/UNI_NTU/stargazers">
+        <img alt="Build" src="https://img.shields.io/github/stars/stephanie0324/UNI_NTU.svg?color=yellow&style=flat&label=Stars&logoColor=white">
     </a>
-    <a href="https://github.com/stephanie0324/Finetune_LLM/forks">
-        <img alt="badge" src="https://img.shields.io/github/forks/stephanie0324/REVERSI.svg?style=flat&label=Forks">
+    <a href="https://github.com/stephanie0324/UNI_NTU/forks">
+        <img alt="badge" src="https://img.shields.io/github/forks/stephanie0324/UNI_NTU.svg?style=flat&label=Forks">
     </a>
     <a href="https://github.com/FlagOpen/FlagEmbedding">
             <img alt="Build" src="https://img.shields.io/badge/Contribution-Welcome-lightblue">
     </a>
 </p>
 
-<p align="center"> <img src="https://github.com/stephanie0324/REVERSI/blob/master/reversi.gif" width="250" , hieght= "250">  </p>
-<p align="center">
-</p>
 
 
 <!---Project Label--->
