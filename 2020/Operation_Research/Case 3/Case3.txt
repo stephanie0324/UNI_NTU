@@ -1,0 +1,55 @@
+### set ###
+set AMA;
+set Mon;
+set Tue;
+set Wed;
+set Thu;
+set Fri;
+set pi_1;
+set pi_2;
+### param ###
+param N; #number of days in Month
+param A; #number of CSRs
+param D{p = in 1..24, d in 1..N};  #demand for every period every day
+param R{i in 1..A ,s in 0..13,d in 1..N};  # shift requests
+
+### variables ###
+var H{p in 1..24, d in 1..N};
+var W{i in 1..A , s in 0..13, d in 1..N};
+
+### objective functions ###
+minimize lack: sum{p in 1..24, d in 1..N} L[p, d];
+
+### constraints ###
+subject to one shift per day: sum{i in 1..A , s in 0..13, d in 1..N} W[i , s ,d] = 1;
+subject to eight days off: sum{i in 1..A , s in 0..13, d in 1..N} W[i, 0 ,d] = 8;
+subject to consecutive night shift limit {d in 1..N-6} :sum{i in 1..A ,s in 11..13 , k in d..d+6} W[i , s , k] <= 1;
+subject to consecutive afternoon shift limit {d in 1..N-6}: sum{i in 1..A , s in 7..10 , k in d..d+6}W[i , s , k] <= 2;
+subject to one day off {d in 1..N-6}: sum{i in 1..A , s in 7..10 , k in d..d+6} W[i , 0 , k] = 1;
+subject to request {i in 1..A, s in 0..13 ,d in 1..N}: W[i, s ,d] >= R[i , s ,d];
+subject to manager limit 1: sum{i in AMA , s in 11..13 , d=1..N} W[i , s ,1] >= 1;
+subject to manager limit 2: sum{i in AMA , s in 7..10, d= 1..N} W[i ,s ,10] >= 2;
+subject to manager limit 3: sum{i in AMA , s in 11..13 , d = 1..N} W[i ,s ,15] >= 1;
+subject to manager limit 4: sum{i in AMA , s in 1..13 , d = ..N} W[i ,s ,22] >=1;
+subject to manager limit 5: sum{i in AMA , s in 1..13 , d = ..N} W[i ,s ,29] >=1;
+subject to senior limit 1: 
+
+subject to dailyCSR {j in 1..N}: sum{i in 0..13} x[i, j]  = C;
+subject to shift_1 {t in 1..5, j in 1..N}: (sum{i in 1..5} x[i, j]) + (sum{i in 7..12} x[i, j]) = y[t, j];
+subject to shift_6 {j in 1..N}: (sum{i in 1..5} x[i, j]) + (sum{i in 7..10} x[i, j]) + x[12, j] = y[6, j];
+subject to shift_7 {j in 1..N}: (sum{i in 2..5} x[i, j]) + (sum{i in 8..10} x[i, j])= y[7, j];
+subject to shift_8 {j in 1..N}: (sum{i in 3..4} x[i, j]) + (sum{i in 9..11} x[i, j]) + x[13, j] = y[8, j];
+subject to shift_9 {j in 1..N}: (sum{i in 10..13} x[i, j]) + x[1, j] + x[4, j] + x[7, j] = y[9, j];
+subject to shift_10 {j in 1..N}: (sum{i in 1..2} x[i, j]) + (sum{i in 6..8} x[i, j]) + (sum{i in 11..13} x[i, j]) = y[10, j];
+subject to shift_11 {j in 1..N}: (sum{i in 1..3} x[i, j]) + (sum{i in 6..9} x[i, j]) + (sum{i in 11..13} x[i, j]) = y[11, j];
+subject to shift_12 {t in 12..15, j in 1..N}: (sum{i in 1..4} x[i, j]) + (sum{i in 6..13} x[i, j]) = y[t, j];
+subject to shift_16 {j in 1..N}: (sum{i in 1..4} x[i, j]) + (sum{i in 6..10} x[i, j]) + x[12, j] = y[16, j];
+subject to shift_17 {j in 1..N}: (sum{i in 1..4} x[i, j]) + (sum{i in 6..10} x[i, j]) = y[17, j];
+subject to shift_18 {j in 1..N}: (sum{i in 7..11} x[i, j]) + x[13, j] = y[18, j];
+subject to shift_19 {j in 1..N}: (sum{i in 7..13} x[i, j]) = y[19, j];
+subject to shift_20 {t in 20..24, j in 1..N}: (sum{i in 11..13} x[i, j]) = y[t, j];
+subject to lack_nonneg{t in 1..24, j in 1..N}: w[t, j] >= 0;
+subject to lack_calculation{t in 1..24, j in 1..N}: L[p, d] >= D[p, d] - H[p, d];
+subject to nonneg_2{p in 1..24, d in 1..N}: H[p, d] >= 0;
+subject to constraint_2: B = 4.43*C;
+subject to constraint_3: A = B*2;

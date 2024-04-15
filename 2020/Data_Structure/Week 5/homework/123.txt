@@ -1,0 +1,135 @@
+#10個角色
+R a 8 9 10
+R b 18 9 9
+R c 28 9 8
+R d 38 9 7
+R e 58 9 6
+D aisjf 48 9 5
+D sfjoa 68 9 4
+D eawkfjewf 78 9 3
+D sajfwejhifuwaehf 88 9 2
+D weuhafieu 98 9 1
+A a potion 1
+A b herb 3
+A a sword 3
+A a potion 1
+A a sword 3
+A c potion 1
+A c herb 3
+A d sword 3
+A d potion 1
+A d sword 3
+A e potion 1
+A e herb 3
+A aisjf sword 3
+A aisjf potion 1
+A aisjf sword 3
+
+
+
+
+
+
+
+
+#沒有任何和資料測試 A H U L S V - no such character
+A fjie hsudf 6
+H sijf seij
+U jsiaf jioef
+S sifjew
+L ifejfo
+V jsif jiosdj
+
+#已存在玩家 - the character exisits
+R Alice 10 4
+D Bob 8 3
+R Alice 7 2
+D Bob 8 6
+
+#A包包滿了 - no more capacity
+R Alice 10 4
+A Alice potion 1
+A Alice herb 3
+A Alice sword 3
+A Alice potion 1
+A Alice sword 3
+
+#H - 各種可能
+R Alice 10 4
+A Alice potion 1
+H Alice potion
+H Alice herb
+H jiewfj iefjo
+
+#U - 各種狀況
+R Alice 10 4
+A Alice potion 1
+A Alice sword 2
+A Alice herb 3
+U Alice euwhfiaehwufhaw
+U Alice sword
+U Alice herb
+
+#L - 各種狀況
+R Alice 10 4
+A Alice potion 1
+A Alice sword 2
+L Alice
+U Alice potion
+U Alice sword
+L Alice
+L uwehfiwheufh
+
+#S - 各種狀況
+R Alice 10 10
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice sword 2
+L Alice
+S Alice
+U Alice potion
+U Alice sword
+L Alice
+S Alice
+L uwehfiwheufh
+S ijoafjejfalwef
+
+#V-各種狀況
+R Alice 10 10
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+V Alice potion
+V Alice potion
+V Alice potion
+V Alice potion
+V usafoieawhof potion
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice potion 1
+A Alice sword 2
+L Alice
+S Alice
+U Alice potion
+U Alice sword
+L Alice
+S Alice
+L uwehfiwheufh
+S ijoafjejfalwef
+
+
+

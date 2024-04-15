@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/img"/>
+    <qresource prefix="/">
+        <file>../截圖 2020-01-08 下午3.18.30.png</file>
+        <file>../截圖 2020-01-08 下午3.28.25.png</file>
+        <file>../截圖 2020-01-08 下午3.33.00.png</file>
+        <file>../截圖 2020-01-08 下午3.41.57.png</file>
+        <file>../截圖 2020-01-08 下午4.31.30.png</file>
+    </qresource>
+</RCC>
